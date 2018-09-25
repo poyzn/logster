@@ -11,7 +11,8 @@ module Logster::Rails
     require 'logster/middleware/reporter'
 
     store = Logster.store ||= Logster::RedisStore.new
-    store.level = Logger::Severity::WARN if Rails.env.production?
+#     store.level = Logger::Severity::WARN if Rails.env.production?
+    #     store.level = Logger::Severity::DEBUG if Rails.env.production?
 
     logger = Logster::Logger.new(store)
     logger.chain(::Rails.logger)
