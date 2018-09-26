@@ -35,7 +35,7 @@ module Logster::Rails
       end
 
       app.middleware.delete ActionDispatch::DebugExceptions
-      app.config.colorize_logging = false
+      # app.config.colorize_logging = false
 
       unless Logster.config.application_version
         git_version = `cd #{Rails.root} && git rev-parse --short HEAD 2> /dev/null`
